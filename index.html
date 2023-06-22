@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Registro - Título noche</title>
+    <!-- npx tailwindcss -i ./css/index.css -o ./css/styles.css --watch -->
+</head>
+<body class="bg-gray-200">
+    <main class="w-full lg:w-1/2 my-2 mx-auto rounded-md overflow-hidden bg-purple-exm shadow-lg">     
+        <h2 class="font-semibold text-lg text-center text-white p-1">Confirma tu asistencia a las Noche ExM</h2>
+        <section class="p-2 flex flex-wrap content-center items-center justify-center text-sm rounded-t-lg bg-gray-50 shadow-lg">
+
+            <div class="w-full lg:w-3/4 mx-auto rounded-sm text-sm my-2 bg-white">
+                <span class="font-semibold px-1">Nombre</span>
+                <input type="email" name="lastname" id="lastname" placeholder="Nombre" class="w-full p-2 focus:outline-none border-b-2 border-gray-300"/>
+            </div>
+            <div class="w-full lg:w-3/4 mx-auto rounded-sm text-sm my-2 bg-white">
+                <span class="font-semibold px-1">Correo</span>
+                <input type="email" name="email" id="email" placeholder="Correo" class="w-full p-2 focus:outline-none border-b-2 border-gray-300"/>
+            </div>
+
+            <div class="w-full lg:w-3/4 mx-auto rounded-sm text-sm my-2 bg-white">
+                <span class="font-semibold px-1">Acompañante</span>
+                <input type="text" name="companion" id="companion" placeholder="Acompañante" class="w-full p-2 focus:outline-none border-b-2 border-gray-300" value="Aquí va un radiobutton de sí o no"/>
+            </div>
+
+            <div class="w-full lg:w-3/4 mx-auto rounded-sm text-sm my-2 bg-white">
+                <span class="font-semibold px-1">Nombre de tu acompañante</span>
+                <input type="text" name="companionname" id="companionname" placeholder="Nombre de tu acompañante" class="w-full p-2 focus:outline-none border-b-2 border-gray-300" value="Si pusieron que si llevan a alguien"/>
+            </div>
+
+            <div class="w-full lg:w-3/4 mx-auto rounded-sm text-sm my-2 bg-white">
+                <span class="font-semibold px-1">Organización</span>
+                <input type="text" name="organization" id="organization" placeholder="Organización" class="w-full p-2 focus:outline-none border-b-2 border-gray-300"/>
+            </div>
+
+            <div class="w-full lg:w-3/4 mx-auto rounded-sm text-sm my-2 bg-white">
+                <span class="font-semibold px-1">¿Quién te invitó a la Noche ExM?</span>
+                <input type="text" name="whoinvitedyou" id="whoinvitedyou" placeholder="¿Quién te invitó a la Noche ExM?" class="w-full p-2 focus:outline-none border-b-2 border-gray-300" value="select"/>
+            </div>
+
+            <div class="w-full lg:w-3/4 mx-auto rounded-sm text-sm my-2 bg-white">
+                <span class="font-semibold px-1">¿Te gustaría hacer un donativo ahora? El día del evento también podrás hacerlo</span>
+                <input type="text" name="wanttodonate" id="wanttodonate" placeholder="¿Te gustaría hacer un donativo ahora? El día del evento también podrás hacerlo" class="w-full p-2 focus:outline-none border-b-2 border-gray-300" value="Aquí va un radiobutton de sí o no"/>
+            </div>
+
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>
