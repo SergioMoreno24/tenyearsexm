@@ -1,0 +1,7 @@
+{
+    "require": {
+        "stripe/stripe-php": "^9.7",
+        "phpmailer/phpmailer": "^6.7",
+        "mailchimp/marketing": "^3.0"
+    }
+}

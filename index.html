@@ -7,14 +7,14 @@
     <title>Registro - Título noche</title>
     <!-- npx tailwindcss -i ./css/index.css -o ./css/styles.css --watch -->
 </head>
-<body class="bg-gray-200">
+<body class="bg-gray-200 p-2">
     <main class="w-full lg:w-1/2 my-2 mx-auto rounded-md overflow-hidden bg-purple-exm shadow-lg">     
-        <h2 class="font-semibold text-lg text-center text-white p-1">Confirma tu asistencia a las Noche ExM</h2>
+        <h2 class="font-semibold text-lg text-center text-white p-1">Confirma tu asistencia a la Noche ExM</h2>
         <section class="p-2 flex flex-wrap content-center items-center justify-center text-sm rounded-t-lg bg-gray-50 shadow-lg">
 
             <div class="w-full lg:w-3/4 mx-auto rounded-sm text-sm my-2 bg-white">
                 <span class="font-semibold px-1">Nombre</span>
-                <input type="email" name="lastname" id="lastname" placeholder="Nombre" class="w-full p-2 focus:outline-none border-b-2 border-gray-300"/>
+                <input type="text" name="name" id="name" placeholder="Nombre" class="w-full p-2 focus:outline-none border-b-2 border-gray-300"/>
             </div>
             <div class="w-full lg:w-3/4 mx-auto rounded-sm text-sm my-2 bg-white">
                 <span class="font-semibold px-1">Correo</span>
@@ -23,12 +23,22 @@
 
             <div class="w-full lg:w-3/4 mx-auto rounded-sm text-sm my-2 bg-white">
                 <span class="font-semibold px-1">Acompañante</span>
-                <input type="text" name="companion" id="companion" placeholder="Acompañante" class="w-full p-2 focus:outline-none border-b-2 border-gray-300" value="Aquí va un radiobutton de sí o no"/>
+                <div class="grid grid-cols-2 gap-1 lg:gap-2 text-center" id="inputs-type">
+                    <div class="w-full flex items-center content-center px-2 rounded-sm border border-gray-300 text-center text-xs font-semibold hover:bg-purple-exm hover:text-white text-purple-exm cursor-pointer py-1" id="companionyes">
+                        <div class="w-full flex items-center content-center justify-center"><span>Sí</span></div>
+                        <input type="radio" name="companion" id="r-type" class="hidden companion" value="1"/>
+                    </div>
+                    <div class="w-full flex items-center content-center px-2 rounded-sm border border-gray-300 bg-white text-xs font-semibold text-center hover:bg-purple-exm hover:text-white text-purple-exm cursor-pointer py-1" id="companionno">
+                        <div class="w-full flex items-center content-center justify-center"><span class="mx-1 lg:mx-3">No</span></div>
+                        <input type="radio" name="companion" id="o-type" class="hidden companion" value="0" />
+                    </div>
+                </div>
             </div>
 
-            <div class="w-full lg:w-3/4 mx-auto rounded-sm text-sm my-2 bg-white">
+
+            <div class="w-full lg:w-3/4 mx-auto rounded-sm text-sm my-2 bg-white hidden" id="companion-name">
                 <span class="font-semibold px-1">Nombre de tu acompañante</span>
-                <input type="text" name="companionname" id="companionname" placeholder="Nombre de tu acompañante" class="w-full p-2 focus:outline-none border-b-2 border-gray-300" value="Si pusieron que si llevan a alguien"/>
+                <input type="text" name="companionname" id="companionname" placeholder="Nombre de tu acompañante" class="w-full p-2 focus:outline-none border-b-2 border-gray-300"/>
             </div>
 
             <div class="w-full lg:w-3/4 mx-auto rounded-sm text-sm my-2 bg-white">
@@ -38,16 +48,76 @@
 
             <div class="w-full lg:w-3/4 mx-auto rounded-sm text-sm my-2 bg-white">
                 <span class="font-semibold px-1">¿Quién te invitó a la Noche ExM?</span>
-                <input type="text" name="whoinvitedyou" id="whoinvitedyou" placeholder="¿Quién te invitó a la Noche ExM?" class="w-full p-2 focus:outline-none border-b-2 border-gray-300" value="select"/>
+                <select id="whoinvitedyou" name="whoinvitedyou" class="w-full p-2 focus:outline-none border-b-2 border-gray-300">
+                    <option value="1">Ana Paula Cantú</option>
+                    <option value="2">Alexandra Zapata</option>
+                    <option value="3">Eva Fernández</option>
+                    <option value="4">Georgina López Guerra</option>
+                    <option value="5">Isabel Guichard</option>
+                    <option value="6">José Salcedo</option>
+                    <option value="7">Juan Carlos Domínguez</option>
+                    <option value="8">Juan Manuel Gonzalez</option>
+                    <option value="9">Pablo Ruíz</option>
+                    <option value="10">Rubén Coppel</option>
+                    <option value="11">Santiago Pérez</option>
+                    <option value="12">Sofía de Garay</option>
+                </select>
             </div>
 
-            <div class="w-full lg:w-3/4 mx-auto rounded-sm text-sm my-2 bg-white">
+            <div id="wantdonate-ask" class="w-full lg:w-3/4 mx-auto rounded-sm text-sm my-2 bg-white">
                 <span class="font-semibold px-1">¿Te gustaría hacer un donativo ahora? El día del evento también podrás hacerlo</span>
-                <input type="text" name="wanttodonate" id="wanttodonate" placeholder="¿Te gustaría hacer un donativo ahora? El día del evento también podrás hacerlo" class="w-full p-2 focus:outline-none border-b-2 border-gray-300" value="Aquí va un radiobutton de sí o no"/>
+
+                <div class="grid grid-cols-2 gap-1 lg:gap-2 text-center" id="want-donate">
+                    <div class="w-full flex items-center content-center px-2 rounded-sm border border-gray-300 text-center text-xs font-semibold hover:bg-purple-exm hover:text-white text-purple-exm cursor-pointer py-1" id="donateyes">
+                        <div class="w-full flex items-center content-center justify-center"><span class="mx-1 lg:mx-3">Sí</span></div>
+                        <input type="radio" name="type" id="check-d-yes" class="hidden donate" value="1"/>
+                    </div>
+                    <div class="w-full flex items-center content-center px-2 rounded-sm border border-gray-300 bg-white text-xs font-semibold text-center hover:bg-purple-exm hover:text-white text-purple-exm cursor-pointer py-1" id="donateno">
+                        <div class="w-full flex items-center content-center justify-center"><span class="mx-1 lg:mx-3">No</span></div>
+                        <input type="radio" name="type" id="check-d-no" class="hidden donate" value="0" />
+                    </div>
+                </div>
             </div>
+
+            <div id="confirm" class="w-full lg:w-3/4 mx-auto hidden">
+                <button id="btn-confirm" class="w-full bg-purple-exm py-1 px-4 mt-2 text-white font-semibold rounded-sm hover:bg-purple-exm flex flex-nowrap content-center items-center justify-center"><div class="mx-2">Confirmar mi asistencia</div></button>
+            </div>
+            
+            <div id="donation" class="w-full lg:w-3/4 hidden">
+                <div id="amount">
+                    <div class="w-full px-1 rounded-sm border-b-2 border-gray-300 bg-white text-sm my-2">
+                        <span class="text-xs font-semibold">¿Cuánto deseas donar?</span>
+                        <input type="number" name="quantity" id="quantity" placeholder="¿Cuánto deseas donar?" class="w-full p-1 focus:border-none focus:outline-none"/>
+                    </div>
+                </div>
+
+                <div class="w-full mx-auto rounded-sm text-sm my-2 bg-white">
+                    <span class="font-semibold px-1">Recurrencia</span>
+                    <select id="recurrency" name="recurrency" class="w-full p-2 focus:outline-none border-b-2 border-gray-300">
+                        <option value="0">Selecciona una opción</option>
+                        <option value="1">Una vez</option>
+                        <option value="3">Trimestral</option>
+                        <option value="6">Semestral</option>
+                        <option value="12">Anual</option>
+                    </select>
+                </div>
+    
+
+                <div id="card-details">
+                    <div class="w-full px-1 rounded-sm border-b-2 border-gray-300 bg-white text-sm my-2">
+                        <span class="text-xs font-semibold">Datos de la tarjeta</span>
+                        <div id="card-element" class="p-2 my-1"></div>
+                    </div>
+                </div>
+                <button id="btn-donation" class="w-full bg-purple-exm py-1 px-4 mt-2 text-white font-semibold rounded-sm hover:bg-purple-exm flex flex-nowrap content-center items-center justify-center"><div class="mx-2">Donar</div></button>
+            </div>
+            <div id="message" class="w-full lg:w-3/4 mx-auto"></div>
 
         </section>
     </main>
     <footer></footer>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="./js/fun.js"></script>
 </body>
 </html>
